@@ -31,5 +31,6 @@ btnLimpiarCarrito.addEventListener("click",function(){
 localStorage.removeItem("productos-carrito")
 total_prod=0
 totalCarrito.textContent=total_prod;
- 
+/*usaremos propiedad inner para dejar vacio el contenedor*/
+listaProductosCarrito.innerHTML = "";
 });
