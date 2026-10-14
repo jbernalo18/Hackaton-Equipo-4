@@ -1,0 +1,248 @@
+
+:root {
+    --rosa: #d9a3d5;
+    --rosa-fuerte: #c47fbf;
+    --rosa-suave: #faf4fa;
+    --negro: #1a1a1a;
+    --gris: #6c757d;
+    --borde: #e5e5e5;
+}
+
+body {
+    margin: 0;
+    background-color: var(--rosa-suave) !important;
+    color: var(--negro);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Encabezado */
+
+header.bg-dark {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid var(--borde);
+    padding: 20px 0 !important;
+}
+
+header h1 {
+    color: var(--negro);
+    font-size: 28px !important;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header .btn-outline-light {
+    background-color: var(--rosa);
+    border: 1px solid var(--rosa);
+    border-radius: 30px;
+    color: #ffffff;
+    padding: 10px 22px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+header .btn-outline-light:hover {
+    background-color: var(--rosa-fuerte);
+    border-color: var(--rosa-fuerte);
+    color: #ffffff;
+}
+
+/* Contenido */
+
+main.container {
+    max-width: 1200px;
+    padding-top: 45px;
+    padding-bottom: 60px;
+}
+
+main h2 {
+    margin-bottom: 30px !important;
+    color: var(--negro);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Tabla */
+
+.table-responsive {
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 20px rgba(26, 26, 26, 0.04);
+}
+
+.table {
+    margin-bottom: 0;
+    background-color: #ffffff;
+    border-color: var(--borde);
+}
+
+.table thead.table-dark th {
+    padding: 17px 15px;
+    background-color: var(--rosa) !important;
+    border-color: var(--rosa);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 17px 15px;
+    border-color: #f0e8ef;
+    background-color: #ffffff;
+    color: var(--negro);
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.table-hover tbody tr:hover td {
+    background-color: var(--rosa-suave);
+}
+
+#lista-carrito img {
+    width: 65px;
+    height: 75px;
+    border-radius: 9px;
+    object-fit: cover;
+}
+
+#lista-carrito td:nth-child(2) {
+    font-weight: 600;
+}
+
+#lista-carrito td:nth-child(5) {
+    color: var(--rosa-fuerte);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Botón eliminar */
+
+#lista-carrito .btn-danger {
+    padding: 7px 14px;
+    background-color: #ffffff;
+    border: 1px solid var(--rosa-fuerte);
+    border-radius: 25px;
+    color: var(--rosa-fuerte);
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+#lista-carrito .btn-danger:hover {
+    background-color: var(--rosa-fuerte);
+    color: #ffffff;
+}
+
+/* Mensaje de carrito vacío */
+
+#carrito-vacio {
+    margin-top: 20px;
+    padding: 22px;
+    border: 1px solid #ead5e8;
+    border-radius: 12px;
+    background-color: #ffffff;
+    color: var(--gris);
+}
+
+/* Total */
+
+main h3 {
+    margin-top: 35px;
+    color: var(--negro);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#total-carrito {
+    color: var(--rosa-fuerte);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Botones inferiores */
+
+#vaciar-carrito {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--rosa-fuerte);
+    border-radius: 30px;
+    color: var(--rosa-fuerte);
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+#vaciar-carrito:hover {
+    background-color: var(--rosa-fuerte);
+    color: #ffffff;
+}
+
+.btn-success {
+    padding: 10px 22px;
+    background-color: var(--rosa);
+    border: 1px solid var(--rosa);
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.btn-success:hover {
+    background-color: var(--rosa-fuerte);
+    border-color: var(--rosa-fuerte);
+    color: #ffffff;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    main.container {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    main h2 {
+        font-size: 26px;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 12px 9px;
+        font-size: 12px;
+    }
+
+    #lista-carrito img {
+        width: 45px;
+        height: 55px;
+    }
+
+    main h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 23px !important;
+    }
+
+    header .btn-outline-light {
+        padding: 8px 13px;
+        font-size: 12px;
+    }
+
+    main h2 {
+        font-size: 24px;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 9px 7px;
+        font-size: 11px;
+    }
+
+    #lista-carrito img {
+        width: 38px;
+        height: 48px;
+    }
+}
