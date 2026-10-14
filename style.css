@@ -1,1 +1,213 @@
-/*NICOLE*/
+:root {
+  --tinta: #1c1517;   /* texto y bordes */
+  --papel: #fbf6f2;   /* fondo de la página */
+  --arena: #f1e8e2;   /* fondo detrás de las fotos de producto */
+  --coral: #e8505b;   /* único color de acento */
+  --blanco: #ffffff;
+
+  --fuente-titulos: 'Prompt', sans-serif;
+  --fuente-texto: 'Nunito', sans-serif;
+  --ancho-max: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--papel); /*fondo*/
+    font-family: var(--fuente-texto);
+    margin: 0; /*quita el espacio blanco del borde*/
+}
+
+
+.hero {
+    position: relative; /*es la "caja madre": los hijos con absolute se ubican respecto a esta caja y no a toda la pagina*/
+    height: 560px; /*alto del banner*/
+    display: flex;
+    align-items: center; /*texto centrado verticalmente*/
+    overflow: hidden; /*lo que se salga del banner se corta, no se ve*/
+    color: var(--blanco);
+    
+}
+
+/*CAPA 1:el video*/
+.hero-video {
+    position: absolute; /*lo saca del flujo normal, asi queda de fondo y no empuja el texto*/
+    top: 0;
+    left: 0;
+    width: 100%; /*ocupa todo el ancho del hero*/
+    height: 100%; /*ocupa todo el alto del hero*/
+    object-fit: cover; /*llena todo el banner sin deformarse (puede recortar un poco los bordes)*/
+}
+
+/* CAPA 2: la capa oscura encima del video */
+.hero::after {
+    content: ""; /*obligatorio para que el ::after exista, aunque no tenga texto*/
+    position: absolute; /*misma ubicacion que el video, tapa todo el hero*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /*negro con 30% de opacidad, oscurece el video para que el texto blanco se lea (0 = nada, 1 = negro total)*/
+}
+
+/*CAPA3: el texto y el boton*/
+.hero-contenido {
+    position: relative; /*sin esto el z-index no funciona*/
+    z-index: 1; /*numero mas alto = mas arriba, asi el texto queda encima del video y de la capa oscura*/
+    width: 100%;
+    max-width: var(--ancho-max); /*mismo ancho maximo que la seccion de productos*/
+    margin: 0 auto; /*centra el contenido*/
+    padding: 0 40px; /*espacio a los lados*/
+    
+}
+
+.hero h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 56px;
+    text-transform: uppercase; /*mayusc*/
+    max-width: 500px; /*hace que el titulo se parta en varias lineas*/
+    margin: 0 0 16px; /*solo deja espacio abajo*/
+
+
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 0 0 24px; /*espacio antes del boton*/
+
+}
+
+.hero-btn {
+    display: inline-block; /*permite darle padding y que no ocupe todo el ancho*/
+    padding: 14px 28px;
+    border: 1px solid var(--blanco);
+    color: var(--blanco);
+    text-decoration: none; /*quita el subrayado del link*/
+    text-transform: uppercase;
+}
+
+
+
+.hero-btn:hover {
+    background-color: var(--blanco); /*al pasar el mouse se invierten los colores*/
+    color: var(--tinta);
+
+}
+
+
+
+.tienda-trendy-productos {
+max-width: var(--ancho-max); /*manejo de secciones de igual tamaño*/
+  margin: 0 auto;
+  padding: 64px 40px;  /*padding interno container pricipal*/
+}
+
+
+.tienda-trendy-productos h2 {
+  font-size: 28px;
+  text-transform: uppercase; /*mayusc*/
+  letter-spacing: 0.02em; /*espaciado de titulo*/
+}
+
+#maquillaje,
+#cuidado-piel,
+#brochas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    padding: 40px;
+}
+
+
+#maquillaje h2,
+#cuidado-piel h2,
+#brochas h2 {
+    grid-column: 1/-1; /*como se aplico grid , el titulo queda como elemento gris esta regla hace que ocupe todo el ancho del contenetor (h2)*/
+}
+
+.tienda-tarjeta-producto {
+  display: flex; /*manejo de felx para la tarjeta*/
+  flex-direction: column; 
+  gap: 8px; /*separacion de cada tarjeta*/
+  padding: 14px;
+  background: var(--blanco);
+  border: 1px solid var(--tinta);
+  border-radius: 12px; /*esquinas redondeadas*/
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /*sombra suave: x, y, difuminado, color*/
+  transition: transform 0.2s, box-shadow 0.2s; /*hace que el cambio del hover sea suave y no brusco*/
+}
+
+.tienda-tarjeta-producto:hover {
+  transform: translateY(-4px); /*la tarjeta sube 4px al pasar el mouse*/
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /*la sombra crece para dar efecto de elevacion*/
+}
+
+.tienda-tarjeta-producto img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.tienda-tarjeta-producto h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 16px;
+  margin: 0; /*quita el espacio extra del titulo*/
+}
+
+.precio-producto {
+  font-family: var(--fuente-titulos);
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--coral); /*precio en el color de acento*/
+  margin: 0;
+}
+
+.descripcion-producto {
+  font-size: 14px;
+  margin: 0;
+  color: color-mix(in srgb, var(--tinta) 70%, var(--arena) 20%);
+}
+
+.tienda-btn-agregar {
+  margin-top: auto; /*empuja el boton al fondo de la tarjeta*/
+  padding: 14px;
+  background: var(--blanco); /*boton oscuro con letra blanca*/
+  color: var(--tinta);
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  cursor: pointer; /*manito al pasar el mouse*/
+  transition: background 0.2s; /*cambio de color suave*/
+  border: 1px solid var(--tinta);
+}
+
+.tienda-btn-agregar:hover {
+  background: var(--coral); /*al pasar el mouse se pone coral*/
+}
+
+
+/*Respondive*/
+
+@media (max-width: 900px) { 
+  #maquillaje,
+  #cuidado-piel,
+  #brochas {
+      grid-template-columns: repeat(2, minmax(0, 1fr)); /*2 tarjetas por fila en tablet*/
+  }
+}
+
+@media (max-width: 560px) {
+  #maquillaje,
+  #cuidado-piel,
+  #brochas {
+      grid-template-columns: 1fr; /*1 tarjeta por fila en celular*/
+      padding: 16px;
+  }
+
+  .hero h1 {
+      font-size: 32px;
+  }
+}

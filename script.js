@@ -17,22 +17,34 @@ export const guardarProducto = (producto) => {
   return true;
 };
 
+const limpiarPrecio = (texto) => {
+  return Number(texto.replace(/[^\d]/g, ""));
+};
+
 const botones = document.querySelectorAll(".tienda-btn-agregar");
 
 botones.forEach((boton) => {
   boton.addEventListener("click", () => {
-    const producto = boton.closest(".tarjeta");
+    const tarjeta = boton.closest(".tienda-tarjeta-producto");
+    const nombre = tarjeta.querySelector("h3").textContent.trim();
+    const imagen = tarjeta.querySelector("img").getAttribute("src");
+    const precio = limpiarPrecio(
+      tarjeta.querySelector(".precio-producto").textContent,
+    );
+    const descripcion = tarjeta
+      .querySelector(".descripcion-producto")
+      .textContent.trim();
+    const cantidad = 1;
 
     const nuevoProducto = {
-      id: producto.dataset.id,
-      nombre: producto.dataset.nombre,
-      imagen: producto.dataset.imagen,
-      precio: Number(producto.dataset.precio),
-      descripcion: producto.dataset.descripcion,
-      cantidad: Number(producto.dataset.cantidad),
+      id: tarjeta.id,
+      nombre,
+      imagen,
+      precio,
+      descripcion,
+      cantidad,
     };
 
     guardarProducto(nuevoProducto);
   });
 });
-
