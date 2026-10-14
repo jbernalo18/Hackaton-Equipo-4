@@ -19,7 +19,18 @@ const totalCarrito = document.getElementById("total-carrito")
 
 totalCarrito.textContent= total_prod;
 
-// TOMAR LOS ELEMENTOS HACER LOS CALCULOS DE RESUMEN DE COMPRAR  Y CON GET ELEMEN BY ID   BOTON LIMPIAR//
-//EJEM PERSISTAN LOS DATOS DE GUARDADOS EN EL CARRITO, COJA LA LISTA DE OBJETOS. 
-//HEILEN PARRA 
+/*confirmar el nombre de id, con el html llamamos la lista visible del carrito*/
+const listaProductosCarrito = document.getElementById("lista-productos-carrito")//cambiar
 
+
+/*Vamos a traer el boton limpiar*/
+const btnLimpiarCarrito= document.getElementById("btn-limpiar-carrito");
+/*voy a indicarle que haga algo con un addevenlistener*/
+btnLimpiarCarrito.addEventListener("click",function(){
+/*usaremos el metodo de local storage remove item con la clave del localst*/
+localStorage.removeItem("productos-carrito")
+total_prod=0
+totalCarrito.textContent=total_prod;
+/*usaremos propiedad inner para dejar vacio el contenedor*/
+listaProductosCarrito.innerHTML = "";
+});
