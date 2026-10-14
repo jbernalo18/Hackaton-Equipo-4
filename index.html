@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trendy Shop</title>
+
+  <!-- Fuentes de Google (necesitan internet) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Prompt:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- FRANJA DE AVISO -->
+  <div class="aviso">Envíos a todo Colombia en 48 horas · Cambios y devoluciones fáciles ✨</div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="header__nav">
+      <a href="#">Ropa</a>
+      <a href="#">Accesorios</a>
+      <a href="#">Calzado</a>
+      <a href="#">Novedades</a>
+    </nav>
+
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo.png" alt="Trendy Shop">
+    </a>
+
+    <div class="header__acciones">
+      <div class="header__search">
+        <input type="text" placeholder="Buscar..." aria-label="Buscar productos">
+        <button type="button" aria-label="Buscar"><span aria-hidden="true">🔍</span></button>
+      </div>
+      <a href="#" class="header__cart">
+        <span aria-hidden="true">🛒</span>
+        <span class="sr-only">Carrito de compras:</span>
+        <span class="header__cart-count" aria-live="polite">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- MUÑECA -->
+    <section class="hero" id="chica">
+      <video id="chicaVideo" src="assets/video/chica.mp4" muted playsinline preload="auto"
+             aria-label="Modelo luciendo la ropa de Trendy Shop"></video>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="categorias">
+      <h2>Compra por categoría</h2>
+      <p>Encuentra lo que más te gusta</p>
+
+      <div class="categorias__grid">
+        <a href="#" class="categoria">
+          <div class="categoria__img"></div>
+          <h3>Ropa</h3>
+        </a>
+        <a href="#" class="categoria">
+          <div class="categoria__img"></div>
+          <h3>Accesorios</h3>
+        </a>
+        <a href="#" class="categoria">
+          <div class="categoria__img"></div>
+          <h3>Calzado</h3>
+        </a>
+        <a href="#" class="categoria">
+          <div class="categoria__img"></div>
+          <h3>Novedades</h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- BEST SELLERS -->
+    <section class="bestsellers">
+      <h2>Best Sellers</h2>
+      <p>Lo que más aman (y repiten)</p>
+
+      <div class="bestsellers__grid">
+        <article class="producto">
+          <div class="producto__img"></div>
+          <h3>Producto 1</h3>
+          <span class="producto__precio">$ 00.000</span>
+          <button class="btn-agregar" type="button">Añadir a la cesta</button>
+        </article>
+
+        <article class="producto">
+          <div class="producto__img"></div>
+          <h3>Producto 2</h3>
+          <span class="producto__precio">$ 00.000</span>
+          <button class="btn-agregar" type="button">Añadir a la cesta</button>
+        </article>
+
+        <article class="producto">
+          <div class="producto__img"></div>
+          <h3>Producto 3</h3>
+          <span class="producto__precio">$ 00.000</span>
+          <button class="btn-agregar" type="button">Añadir a la cesta</button>
+        </article>
+
+        <article class="producto">
+          <div class="producto__img"></div>
+          <h3>Producto 4</h3>
+          <span class="producto__precio">$ 00.000</span>
+          <button class="btn-agregar" type="button">Añadir a la cesta</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__col">
+      <img src="assets/img/logo.png" alt="Trendy Shop" class="footer__logo">
+      <p>Tu tienda con estilo.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Categorías</h4>
+      <a href="#">Ropa</a>
+      <a href="#">Accesorios</a>
+      <a href="#">Calzado</a>
+      <a href="#">Novedades</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Contacto</h4>
+      <p><a href="mailto:contacto@trendyshop.com">contacto@trendyshop.com</a></p>
+      <p><a href="tel:+573000000000">+57 300 000 0000</a></p>
+    </div>
+
+    <p class="footer__copy">© 2026 Trendy Shop. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/cursor.js"></script>
+  <script src="js/carrito.js"></script>
+</body>
+</html>
