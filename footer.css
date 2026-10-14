@@ -1,0 +1,213 @@
+/* ===== Paleta ===== */
+
+:root {
+    --rosa:        #d9a3d5;
+    --rosa-fuerte: #c47fbf;
+    --negro:       #1a1a1a;
+    --gris-claro:  #c9c9c9;
+    --verde-wa:    #25d366;
+}
+
+
+/* ===== Caja del footer ===== */
+
+.pie {
+    background-color: var(--negro);
+    color: var(--gris-claro);
+    padding: 50px 0 0;
+    font-size: 14px;
+}
+
+.pie h5 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.pie p {
+    line-height: 1.7;
+}
+
+
+/* ===== Columna 1: logo y redes ===== */
+
+.logo-pie {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 14px;
+}
+
+.logo-pie:hover {
+    color: #ffffff;
+}
+
+.logo-shop-pie {
+    color: var(--rosa);
+}
+
+
+/* Redes en circulos rosados */
+
+.redes {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.redes a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--rosa);
+    color: var(--negro);
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.redes a:hover {
+    background-color: #ffffff;
+    transform: translateY(-4px);
+}
+
+
+/* ===== Columna 2: enlaces ===== */
+
+.lista-enlaces {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-enlaces li {
+    margin-bottom: 10px;
+}
+
+.lista-enlaces a {
+    color: var(--gris-claro);
+    text-decoration: none;
+    transition: color 0.2s, padding-left 0.2s;
+}
+
+.lista-enlaces a:hover {
+    color: var(--rosa);
+    padding-left: 6px;
+}
+
+
+/* ===== Columna 3: contacto ===== */
+
+.lista-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-contacto li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.lista-contacto .bi {
+    color: var(--rosa);
+    font-size: 16px;
+}
+
+.lista-contacto a {
+    color: var(--gris-claro);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.lista-contacto a:hover {
+    color: var(--rosa);
+}
+
+
+/* ===== Linea de abajo ===== */
+
+.pie-abajo {
+    border-top: 1px solid #333333;
+    margin-top: 40px;
+    padding: 18px 0;
+    text-align: center;
+}
+
+.pie-abajo p {
+    margin: 0;
+    font-size: 13px;
+    color: #8f8f8f;
+}
+
+
+/* ===== Boton flotante de WhatsApp ===== */
+
+/* position: fixed lo pega a la PANTALLA, no a la pagina.
+   Por eso se queda visible aunque hagas scroll. */
+.whatsapp-flotante {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: var(--verde-wa);
+    color: #ffffff;
+    font-size: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    z-index: 999;              /* queda por encima de todo */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.whatsapp-flotante:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ===== Responsive ===== */
+
+/* Tablet y movil: las columnas se apilan, hay que separarlas */
+@media (max-width: 768px) {
+
+    .pie {
+        padding-top: 36px;
+        text-align: center;
+    }
+
+    .pie .col-md-4 {
+        margin-bottom: 32px;
+    }
+
+    .redes {
+        justify-content: center;
+    }
+
+    .lista-contacto li {
+        justify-content: center;
+    }
+
+    .whatsapp-flotante {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+        bottom: 16px;
+        right: 16px;
+    }
+}
