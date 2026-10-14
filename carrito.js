@@ -1,6 +1,8 @@
+import { obtenerProductosDelCarrito } from "./script";
+
 /*vamos a consultar los datos del local storage, a ver si hay algo guardado en 
 el carro*/
-const productosGuardados = localStorage.getItem("productos-carrito")
+const productosGuardados = obtenerProductosDelCarrito();
 const productos = productosGuardados ? JSON.parse(productosGuardados):[] /*aqui validamos si 
 productos guardados tiene algo entonces los convierte a objetos, si no usa la lista vacia.*/
 
