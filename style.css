@@ -190,6 +190,12 @@ max-width: var(--ancho-max); /*manejo de secciones de igual tamaño*/
   background: var(--coral); /*al pasar el mouse se pone coral*/
 }
 
+#header-trendy {
+    position: sticky; /*se queda pegado arriba al hacer scroll*/
+    top: 0; /*pegado al borde superior de la pantalla*/
+    z-index: 1000; /*numero alto para que quede encima del video y de las tarjetas*/
+}
+
 
 /*Respondive*/
 
