@@ -1,5 +1,11 @@
 
 
+/* Hace que los saltos con # se deslicen en vez de brincar */
+html {
+    scroll-behavior: smooth;
+}
+
+
 :root {
     --rosa:        #d9a3d5;
     --rosa-fuerte: #c47fbf;
