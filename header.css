@@ -1,0 +1,248 @@
+
+
+:root {
+    --rosa:        #d9a3d5;
+    --rosa-fuerte: #c47fbf;
+    --rosa-suave:  #faf4fa;
+    --negro:       #1a1a1a;
+    --gris:        #6c757d;
+    --borde:       #e5e5e5;
+}
+
+
+/* Franja de aviso*/
+
+.aviso-superior {
+    background-color: var(--rosa);
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.aviso-superior .bi {
+    margin-right: 6px;
+}
+
+
+/* Fila 1: logo + buscador + iconos */
+
+.barra-superior {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--borde);
+    padding: 14px 0;
+}
+
+
+/* ----- Logo ----- */
+
+.logo {
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 2px;        
+    color: var(--negro);
+    text-decoration: none;      
+    white-space: nowrap;        
+}
+
+.logo:hover {
+    color: var(--negro);
+}
+
+.logo-shop {
+    color: var(--rosa);
+}
+
+
+/* ----- Buscador ----- */
+
+
+.buscador {
+    position: relative;
+    max-width: 700px;
+}
+
+.buscador .bi-search {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);   
+    color: var(--gris);
+}
+
+.buscador input {
+    width: 100%;
+    padding: 10px 18px 10px 42px;  
+    border: 1px solid var(--negro);
+    border-radius: 30px;           
+    font-size: 14px;
+    outline: none;
+}
+
+/* focus  */
+.buscador input:focus {
+    border-color: var(--rosa);
+    box-shadow: 0 0 0 3px rgba(217, 163, 213, 0.35);
+}
+
+
+/* Iconos de la derecha  */
+
+.iconos {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.iconos a {
+    color: var(--negro);
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 0.2s;        
+}
+
+.iconos a:hover {
+    color: var(--rosa);
+}
+
+
+/* Globito  */
+
+.icono-carrito {
+    position: relative;
+}
+
+.icono-carrito span {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: var(--rosa);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 50%;            /* 50% = circulo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*  menu de navegacion*/
+
+.menu-principal {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--borde);
+    padding: 0;
+}
+
+.menu-principal .nav-link {
+    color: var(--negro);
+    font-size: 15px;
+    padding: 14px 18px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.menu-principal .nav-link:hover {
+    color: var(--rosa-fuerte);
+    background-color: var(--rosa-suave);
+}
+
+/* Marca la pagina en la que esta parado el usuario.
+   Se pone a mano en cada pagina: class="nav-link activo" */
+.menu-principal .nav-link.activo {
+    background-color: var(--rosa);
+    color: #ffffff;
+}
+
+
+/* ----- Boton destacado ----- */
+
+.btn-destacado {
+    background-color: var(--rosa);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 22px;
+    border-radius: 30px;
+    white-space: nowrap;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+/* ANIMACION: al pasar el mouse se oscurece y se corre un poco */
+.btn-destacado:hover {
+    background-color: var(--rosa-fuerte);
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+
+/* ----- Boton hamburguesa ----- */
+
+.navbar-toggler {
+    border: none;
+    padding: 10px 0;
+}
+
+/* Quita el recuadro azul que Bootstrap pone al hacer clic */
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+/*  RESPONSIVE*/
+
+
+/* ----- Tablet: el buscador se baja a su propia linea ----- */
+
+@media (max-width: 992px) {
+
+    .barra-superior .container {
+        flex-wrap: wrap;                 /* permite que los hijos bajen de linea */
+        justify-content: space-between;  /* logo a la izquierda, iconos a la derecha */
+    }
+
+    .buscador {
+        order: 3;             /* lo manda al final */
+        flex-basis: 100%;     /* ocupa todo el ancho */
+        max-width: 100%;
+        margin-top: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .btn-destacado {
+        margin-top: 10px;
+    }
+
+    .menu-principal .nav-link {
+        padding: 10px 0;
+    }
+}
+
+
+/* ----- Movil ----- */
+
+@media (max-width: 576px) {
+
+    .aviso-superior {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .iconos {
+        gap: 14px;
+    }
+
+    .iconos a {
+        font-size: 20px;
+    }
+}
