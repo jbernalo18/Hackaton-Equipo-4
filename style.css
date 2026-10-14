@@ -155,6 +155,8 @@ max-width: var(--ancho-max); /*manejo de secciones de igual tamaño*/
   font-family: var(--fuente-titulos);
   font-size: 16px;
   margin: 0; /*quita el espacio extra del titulo*/
+  line-height: 1.3; /*altura de cada linea del titulo*/
+  min-height: 2.6em; /*reserva el espacio de 2 lineas (1.3 x 2), asi todos los precios quedan a la misma altura*/
 }
 
 .precio-producto {
